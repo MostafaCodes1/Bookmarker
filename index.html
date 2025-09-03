@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styel.css">
+    <title> Bookmark </title>
+    
+</head>
+<body >
+    <!-- ============= header======= -->
+    <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center title">
+              <h1>Bookmarker</h1>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 myForm">
+              <div class="form-title text-center">
+                <h2>
+                  <span><i class="fa-solid fa-bookmark"></i></span> Bookmark your favorite sites
+                  <span><i class="fa-solid fa-bookmark"></i></span>
+                </h2>
+              </div>
+              <div class="mb-3 pb-2">
+                <label for="bookmarkName" class="form-label">
+                  <span><i class="fa-solid fa-book-bookmark"></i></span> Site Name
+                </label>
+                <div class="input-container">
+                  <input
+                    type="text"
+                    class="form-control p-2"
+                    id="bookmarkName"
+                    placeholder="Bookmark Name"
+                    minlength="3"
+                    required
+                  />
+                  <span class="error-icon">!</span>
+                  <span class="success-icon">&#10003;</span>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="bookmarkUrl" class="form-label">
+                  <span><i class="fa-solid fa-link"></i></span> Site URL
+                </label>
+                <div class="input-container">
+                  <input
+                    type="text"
+                    class="form-control p-2"
+                    id="bookmarkUrl"
+                    placeholder="Website URL"
+                    pattern="^(www|WWW)\..*\.(com|COM)$"
+                    required
+                  />
+                  <span class="error-icon">!</span>
+                  <span class="success-icon">&#10003;</span>
+                </div>
+              </div>
+              <div class="text-center pt-4 pb-4">
+                <button id="addUpdate" onclick="addBookmark()" class="btn btn-md" type="submit">Add Bookmark</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container pt-5">
+          <div class="row">
+            <table class="table">
+              <thead>
+                <tr class="text-center">
+                  <th scope="col">Index</th>
+                  <th scope="col">Website Name</th>
+                  <th scope="col">Visit</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody id="tableData"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

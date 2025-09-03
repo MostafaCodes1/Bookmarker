@@ -1,0 +1,215 @@
+/* ---------------------------------------- Start Root Colors --------------------------------------- */
+:root {
+  --bg-color: #c9fcfc;          
+  --text-color: #212529;        
+  --title-color: #352e28;      
+  --highlight-color: #60d9fe;   
+
+  --primary: #4db6ac;         
+  --primary-dark: #399186;      
+
+  --danger: #e57373;            
+  --danger-dark: #ef5350;
+
+  --success: #81c784;        
+  --success-dark: #66bb6a;
+
+  --info: #64b5f6;              
+  --info-dark: #42a5f5;
+}
+/* ---------------------------------------- End Root Colors --------------------------------------- */
+
+/* ---------------------------------------- Start General Styling --------------------------------------- */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg-color);
+}
+::selection {
+  background-color: var(--highlight-color);
+}
+/* ---------------------------------------- End General Styling --------------------------------------- */
+
+/* --------------------------------------- Start Title Styling --------------------------------------- */
+.title {
+  padding-block: 3rem;
+  border-bottom: 2px dotted var(--text-color);
+}
+.title h1 {
+  font-family: 'Pacifico', cursive;
+  font-weight: 500; 
+  font-style: normal;
+  color: var(--title-color);
+  font-size: 50px;
+  line-height: 60px;
+  position: relative;
+  display: inline;
+}
+.title h1::before {
+  content: '';
+  background-color: var(--highlight-color);
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  bottom: 20%;
+  z-index: -1;
+  transition: 0.5s all ease;
+}
+.title h1:hover::before {
+  height: 40%;
+}
+/* --------------------------------------- End Title Styling --------------------------------------- */
+
+/* ---------------------------------------- Start Form Styling --------------------------------------- */
+.myForm {
+  border-bottom: 2px dotted var(--text-color);
+  padding-block-end: 1rem;
+}
+.myForm .form-title {
+  padding-block: 2rem;
+  background: linear-gradient(to right, var(--primary), var(--success-dark));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.myForm .form-title h2 {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 30px;
+}
+.myForm .form-title span i {
+  padding-inline: 0.5rem;
+}
+
+/* Label */
+.myForm .form-label {
+  font-family: 'PT Sans Caption', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  color: var(--text-color);
+}
+.myForm .form-label span i {
+  padding-inline: 0.5rem;
+}
+
+/* Button */
+.myForm button {
+  background-color: var(--primary);
+  color: #fff;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  border-radius: 6px;
+  transition: 0.3s ease;
+  border: none;
+}
+.myForm button:hover {
+  background-color: var(--primary-dark);
+  color: #fff;
+}
+
+/* Input Focus */
+input:focus {
+  border: 2px solid rgba(77, 182, 172, 0.5) !important;
+  box-shadow: 0 0 5px var(--primary) !important;
+  outline: none;
+}
+
+/* Icons */
+.input-container {
+  position: relative;
+}
+.error-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: white;
+  background-color: var(--danger);
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  display: none;
+}
+.success-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: var(--success-dark);
+  display: none;
+}
+
+/* Validation */
+input:invalid:not(:placeholder-shown) ~ .error-icon {
+  display: flex;
+}
+input:valid:not(:placeholder-shown) ~ .success-icon {
+  display: inline;
+}
+input:invalid:not(:placeholder-shown) {
+  border-color: var(--danger) !important;
+}
+input:valid:not(:placeholder-shown) {
+  border-color: var(--success) !important;
+}
+/* ---------------------------------------- End Form Styling --------------------------------------- */
+
+/* --------------------------------------- Start Table Styling --------------------------------------- */
+.table thead th {
+  padding-block: 1rem;
+  font-family: 'PT Sans Caption', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  color: var(--text-color);
+}
+.table tbody td {
+  padding-block: 0.5rem;
+  font-family: 'PT Sans Caption', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  color: var(--text-color);
+}
+.table tbody td button {
+  color: #fff;
+}
+.table tbody td a {
+  text-decoration: none;
+  color: inherit;
+}
+.table tbody td .visit {
+  background-color: var(--info);
+  border: none;
+}
+.table tbody td .visit:hover {
+  background-color: var(--info-dark);
+}
+.table tbody td .delete {
+  background-color: var(--danger);
+  border: none;
+}
+.table tbody td .delete:hover {
+  background-color: var(--danger-dark);
+}
+
+.table tbody tr span i {
+  padding-right: 0.5rem;
+}
+/* --------------------------------------- End Table Styling --------------------------------------- */
